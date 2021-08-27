@@ -2,6 +2,7 @@
 # You should customize it to meet your own requirements.
 name: 'Continuous Deployment'
 on:
+  workflow_dispatch:
   # When new commits are pushed onto the main branch.
   push:
     branches:
