@@ -2,7 +2,6 @@
 # You should customize it to meet your own requirements.
 name: 'Continuous Deployment'
 on:
-  workflow_dispatch:
   # When new commits are pushed onto the main branch.
   push:
     branches:
@@ -35,13 +34,13 @@ jobs:
       # 'npm ci' is used here to install dependencies and it depends on package-lock.json.
       # If you prefer to use 'npm ci', please make sure to commit package-lock.json first, or just change it to 'npm install'.
       - name: Build the project
-        run: echo "build" 
+        run: cd tabs && npm install && npm run build 
 
       # Run unit test.
       # Currently, no opinioned solution for unit test provided during scaffolding, so,
       # set up any unit test framework you prefer (for example, mocha or jest) and update the commands accordingly in below.
       - name: Run Unit Test
-        run: echo "ut" 
+        run: echo "Run your unit test" 
 
       # We suggest to do the `teamsfx provision` step manually or in a separate workflow. The following steps are for your reference.
       # After provisioning, you should commit .fx/env.default.json into the repository.
