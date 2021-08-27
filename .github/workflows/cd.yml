@@ -75,8 +75,8 @@ jobs:
         uses: OfficeDev/teamsfx-cli-action@v1
         with:
           commands: |
-            show
             account
+            show
 
       - name: Deploy to hosting environment
         uses: OfficeDev/teamsfx-cli-action@v1
