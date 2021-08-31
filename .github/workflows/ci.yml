@@ -7,10 +7,8 @@ on:
     branches:
       - dev
 jobs:
-  buildAndPublish:
+  buildAndTest:
     runs-on: ubuntu-latest
-
-
     steps:
       # Setup environment.
       - uses: actions/setup-node@v2
