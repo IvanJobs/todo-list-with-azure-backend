@@ -2,10 +2,11 @@
 # You should customize it to meet your own requirements.
 name: 'Continuous Deployment'
 on:
+  workflow_dispatch:
   # When new commits are pushed onto the main branch.
-  push:
-    branches:
-      - main
+  #push:
+  #  branches:
+  #    - main
 jobs:
   buildAndPublish:
     runs-on: ubuntu-latest
@@ -81,7 +82,7 @@ jobs:
       - name: Package Teams App for publishing
         uses: OfficeDev/teamsfx-cli-action@v1
         with:
-          commands: package
+          commands: build
 
       - name: Upload Teams App's package as artifact
         uses: actions/upload-artifact@v2
